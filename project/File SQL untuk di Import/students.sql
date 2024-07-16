@@ -24,16 +24,16 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `students`
+-- Table structure for table `visitors`
 --
 
-CREATE TABLE `students` (
+CREATE TABLE `visitors` (
   `id` int(6) NOT NULL,
   `name` varchar(191) NOT NULL,
   `gender` varchar(191) NOT NULL,
   `birth` varchar(191) NOT NULL,
   `age` varchar(191) NOT NULL,
-  `pekerjaan` varchar(100) NOT NULL,
+  `gender` varchar(100) NOT NULL,
   `phone` varchar(100) NOT NULL,
   `keluhanutama` varchar(200) NOT NULL,
   `anamnesis` varchar(100) NOT NULL,
@@ -45,10 +45,10 @@ CREATE TABLE `students` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `students`
+-- Dumping data for table `visitors`
 --
 
-INSERT INTO `students` (`id`, `name`, `gender`, `birth`, `age`, `pekerjaan`, `phone`, `keluhanutama`, `anamnesis`, `pemeriksaanfisik`, `pemeriksaanlaboratorium`, `pemeriksaanimejing`, `terapi`, `instruksilanjutan`) VALUES
+INSERT INTO `visitors` (`id`, `name`, `gender`, `birth`, `age`, `gender`, `phone`, `keluhanutama`, `anamnesis`, `pemeriksaanfisik`, `pemeriksaanlaboratorium`, `pemeriksaanimejing`, `terapi`, `instruksilanjutan`) VALUES
 (1, 'Palulu', 'Laki-Laki', '22 November 2004', '21', 'Pejabat', '0812334656905', 'Sehat', 'Aman', 'Sehat', 'Sehat', 'Sehat', 'Tidak Ada', '-');
 
 --
@@ -56,9 +56,9 @@ INSERT INTO `students` (`id`, `name`, `gender`, `birth`, `age`, `pekerjaan`, `ph
 --
 
 --
--- Indexes for table `students`
+-- Indexes for table `visitors`
 --
-ALTER TABLE `students`
+ALTER TABLE `visitors`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -66,9 +66,9 @@ ALTER TABLE `students`
 --
 
 --
--- AUTO_INCREMENT for table `students`
+-- AUTO_INCREMENT for table `visitors`
 --
-ALTER TABLE `students`
+ALTER TABLE `visitors`
   MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
 COMMIT;
 

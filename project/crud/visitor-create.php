@@ -12,7 +12,7 @@ session_start();
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <title>Patient Create</title>
+    <title>Visitor Create</title>
 </head>
 <body>
   
@@ -24,7 +24,7 @@ session_start();
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Patient Add 
+                        <h4>Visitor Add 
                             <a href="../index.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -40,17 +40,23 @@ session_start();
                                 <label>Umur</label>
                                 <input type="text" name="age" class="form-control">
                             </div>
-                            <div class="mb-3">
-                                <label>Pekerjaan</label>
-                                <input type="text" name="pekerjaan" class="form-control">
+                            <div class="mb-3">  
+                            <label>Gender</label>
                             </div>
+                            
+                            
+                            <input type="radio" id="male" name="gender" value="Male" required>
+                            <label for="male">Male</label>
+                            <input type="radio" id="female" name="gender" value="Female" required>
+                            <label for="female">Female</label><br><br>
+                            
                             <div class="mb-3">
                                 <label>No. HP</label>
                                 <input type="text" name="phone" class="form-control">
                             </div>
                             
                             <div class="mb-3">
-                                <button type="submit" name="save_student" class="btn btn-primary">Save Patient</button>
+                                <button type="submit" name="save_visitor" class="btn btn-primary">Create Data</button>
                             </div>
 
                         </form>
