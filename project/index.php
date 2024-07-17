@@ -2,6 +2,8 @@
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: auth/login.php');
+    // Fetch the username from the database
+
     exit;
 }
 require 'dbcon.php';
@@ -44,14 +46,14 @@ require 'dbcon.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Library Visitor Details
+                        <h4>Visitor Details
                             <a href="crud/visitor-create.php" class="btn btn-success float-end">Add Visitors</a>
                         </h4>
                     </div>
                     <div class="card-body">
                         <form action="" method="GET">
                             <div class="input-group mb-3">
-                                <input type="text" name="search" value="<?php if (isset($_GET['search'])) { echo $_GET['search']; } ?>" class="form-control" placeholder="Search data" required>
+                                <input type="text" name="search" value="<?php if (isset($_GET['search'])) { echo $_GET['search']; } ?>" class="form-control" placeholder="Search by name" required>
                                 <button type="submit" class="btn btn-success">Search</button>
                             </div>
                         </form>
