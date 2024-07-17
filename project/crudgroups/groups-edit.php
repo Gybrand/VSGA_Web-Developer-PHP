@@ -32,38 +32,49 @@ include 'message.php';
                     </div>
                     <div class="card-body">
 
-                        <?php
+                    <?php
                         if(isset($_GET['id']))
                         {
-                            $groups_id = mysqli_real_escape_string($con, $_GET['id']);
-                            $query = "SELECT * FROM groups WHERE id='$groups_id' ";
+                            $group_id = mysqli_real_escape_string($con, $_GET['id']);
+                            $query = "SELECT * FROM groups WHERE id='$group_id' ";
                             $query_run = mysqli_query($con, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
                             {
-                                $groups = mysqli_fetch_array($query_run);
+                                $group = mysqli_fetch_array($query_run);
                                 ?>
                                 <form action="../code.php" method="POST">
-                                    <input type="hidden" name="groups_id" value="<?= $groups['id']; ?>">
-
+                                <input type="hidden" name="group_id" value="<?= $group['id']; ?>">
                                     <div class="mb-3">
-                                        
-                                        <label>Nama</label>
-                                        <input type="text" name="name" value="<?=$groups['visitor_name'];?>" class="form-control">
+                                        <label for="visitor_name">Nama</label>
+                                        <?php 
+                                        include('../dbcon.php');
+                                        $datas = $con->query("SELECT groups.visitor_name FROM groups");
+                                        ?>
+                                        <select name="visitor_name" id="visitor_name" class="form-control">
+                                            <?php foreach ($datas as $data): ?>
+                                                <option value="<?php echo $data['visitor_name']; ?>"><?php echo $data['visitor_name']; ?></option>
+                                            <?php endforeach; ?>
+                                        </select>
                                     </div>
                             
-                                    <div class="mb-3">
-                                        <label>Category</label>
-                                        <input type="text" name="category_name" value="<?=$groups['category_name'];?>" class="form-control">
-                                    </div>
-
-                                    <div class="mb-3">
-                                        <button type="submit" name="update_groups" class="btn btn-success">
-                                            Update Groups
-                                        </button>
-                                    </div>
-
-                                </form>
+                            <div class="mb-3">
+                                <label for="category_name">Category</label>
+                                <?php 
+                                include('../dbcon.php');
+                                $categories = $con->query("SELECT category.category_name FROM category");
+                                ?>
+                                <select name="category_name" id="category_name" class="form-control">
+                                    <?php foreach ($categories as $category): ?>
+                                        <option value="<?php echo $category['category_name']; ?>"><?php echo $category['category_name']; ?></option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <button type="submit" name="update_groups" class="btn btn-success">Create Group</button>
+                            </div>
+                        </form>
                                 <?php
                             }
                             else

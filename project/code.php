@@ -168,51 +168,45 @@ if (isset($_POST['save_groups'])) {
 }
 
 
-if(isset($_POST['update_groups']))
-{
-    $groups_id = mysqli_real_escape_string($con, $_POST['groups_id']);
+if (isset($_POST['update_groups'])) {
+    $group_id = mysqli_real_escape_string($con, $_POST['group_id']);
+    $visitor_name = mysqli_real_escape_string($con, $_POST['visitor_name']);
+    $category_name = mysqli_real_escape_string($con, $_POST['category_name']);
 
-    $groups_name = mysqli_real_escape_string($con, $_POST['groups_name']);
-
-
-
-    $query = "UPDATE groups SET name='$groups_name' WHERE id='$groups_id' ";
+    $query = "UPDATE groups SET visitor_name='$visitor_name', category_name='$category_name' WHERE id='$group_id'";
     $query_run = mysqli_query($con, $query);
 
-    if($query_run)
-    {
-        $_SESSION['message'] = "Groups Updated Successfully";
+    if ($query_run) {
+        $_SESSION['message'] = "Group updated successfully";
         header("Location: index.php");
         exit(0);
-    }
-    else
-    {
-        $_SESSION['message'] = "Groups Not Updated";
-        header("Location: index.php");
-        exit(0);
-    }
-
-}
-
-if(isset($_POST['delete_groups']))
-{
-    $groups_id = mysqli_real_escape_string($con, $_POST['delete_groups']);
-
-    $query = "DELETE FROM groups WHERE id='$groups_id' ";
-    $query_run = mysqli_query($con, $query);
-
-    if($query_run)
-    {
-        $_SESSION['message'] = "Groups Deleted Successfully";
-        header("Location: index.php");
-        exit(0);
-    }
-    else
-    {
-        $_SESSION['message'] = "Groups Not Deleted";
-        header("Location: index.php");
+    } else {
+        error_log("Query failed: " . mysqli_error($con));
+        $_SESSION['message'] = "Group update failed";
+        header("Location: crudgroups/groups-edit.php?id=$group_id");
         exit(0);
     }
 }
+
+
+
+if (isset($_POST['delete_groups'])) {
+    $group_id = mysqli_real_escape_string($con, $_POST['delete_groups']);
+
+    $query = "DELETE FROM groups WHERE id='$group_id'";
+    $query_run = mysqli_query($con, $query);
+
+    if ($query_run) {
+        $_SESSION['message'] = "Group deleted successfully";
+        header("Location: index.php");
+        exit(0);
+    } else {
+        error_log("Query failed: " . mysqli_error($con));
+        $_SESSION['message'] = "Group deletion failed";
+        header("Location: crudgroups/groups-list.php");
+        exit(0);
+    }
+}
+
 
 ?>
