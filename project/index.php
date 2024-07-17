@@ -28,6 +28,8 @@ require 'dbcon.php';
         }
     </style>
 
+    <link rel="icon" href="image/Logoo.png">
+
     <title>enVisitory</title>
 </head>
 <body>
