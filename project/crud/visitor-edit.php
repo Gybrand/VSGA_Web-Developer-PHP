@@ -17,7 +17,7 @@ include 'message.php';
     <title>Visitor Edit</title>
 </head>
 <body>
-  
+
     <div class="container mt-5">
 
         <?php include('message.php'); ?>
@@ -27,7 +27,7 @@ include 'message.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>Patiant Edit 
-                            <a href="../index.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="../index.php" class="btn btn-secondary float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -71,7 +71,7 @@ include 'message.php';
                                     </div>
 
                                     <div class="mb-3">
-                                        <button type="submit" name="update_visitor" class="btn btn-primary">
+                                        <button type="submit" name="update_visitor" class="btn btn-success">
                                             Update Visitor
                                         </button>
                                     </div>

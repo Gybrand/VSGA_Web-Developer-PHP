@@ -15,7 +15,6 @@ include 'message.php';
     <title>Visitor View</title>
 </head>
 <body>
-
     <div class="container mt-5">
 
         <div class="row">
@@ -23,7 +22,7 @@ include 'message.php';
                 <div class="card">
                     <div class="card-header">
                         <h4>Visitor View Details 
-                            <a href="../index.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="../index.php" class="btn btn-secondary float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">

@@ -15,7 +15,7 @@ session_start();
     <title>Visitor Create</title>
 </head>
 <body>
-  
+
     <div class="container mt-5">
 
         <?php include('message.php'); ?>
@@ -25,7 +25,7 @@ session_start();
                 <div class="card">
                     <div class="card-header">
                         <h4>Visitor Add 
-                            <a href="../index.php" class="btn btn-danger float-end">BACK</a>
+                            <a href="../index.php" class="btn btn-secondary float-end">BACK</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -56,7 +56,7 @@ session_start();
                             </div>
                             
                             <div class="mb-3">
-                                <button type="submit" name="save_visitor" class="btn btn-primary">Create Data</button>
+                                <button type="submit" name="save_visitor" class="btn btn-success">Create Data</button>
                             </div>
 
                         </form>
