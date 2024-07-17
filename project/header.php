@@ -1,10 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="en">
-
-
-
 <?php
+
+require 'dbcon.php';
 
 $user_id = $_SESSION['user_id'];
 
@@ -16,7 +14,6 @@ $stmt->bind_result($username);
 $stmt->fetch();
 $stmt->close();
 $con->close();
-
 require 'dbcon.php';
 ?>
 
@@ -28,7 +25,7 @@ require 'dbcon.php';
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         .navbar-nav .nav-link {
-            font-size: 20px; /* Change this value to adjust the text size */
+            font-size: 20px;
         }
     </style>
 </head>
@@ -37,7 +34,7 @@ require 'dbcon.php';
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">
-                <img src="image/Logo.png" alt="../Logo.png" style="width:40px;" class="rounded-pill">
+                <img src="image/Logo.png" alt="Logo" style="width:40px;" class="rounded-pill">
             </a>
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
@@ -58,8 +55,26 @@ require 'dbcon.php';
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
-            <p>You want to log out?</p>
-            <button onclick="location.href='auth/logout.php'" class="btn btn-danger active float-start me-2 btn-lg btn-block"><i class="fas fa-sign-out-alt"></i> Log Out </button>
+            <ul class="navbar-nav me-auto">
+                <button onclick="location.href='index.php'" class="btn btn-success active float-start me-2 btn-lg btn-block">
+                    </i> Dashboard
+                </button>
+            </ul>
+            <br>
+            <ul class="navbar-nav me-auto">
+                <button onclick="location.href='history.php'" class="btn btn-success active float-start me-2 btn-lg btn-block">
+                    <!-- <i class="fas fa-clipboard-list"> --></i> History
+                </button>
+            </ul>
+            <br>
+            <div class="d-flex justify-content-center">
+                <p>Do you want to log out?</p>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button onclick="location.href='auth/logout.php'" class="btn btn-danger active float-center me-2 btn-lg btn-block">
+                    <i class="fas fa-sign-out-alt"></i> Log Out
+                </button>
+            </div>
         </div>
     </div>
 

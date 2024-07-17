@@ -2,8 +2,6 @@
 session_start();
 if (!isset($_SESSION['user_id'])) {
     header('Location: auth/login.php');
-    // Fetch the username from the database
-
     exit;
 }
 require 'dbcon.php';
