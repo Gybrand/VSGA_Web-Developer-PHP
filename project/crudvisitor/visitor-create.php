@@ -33,7 +33,7 @@ session_start();
 
                             <div class="mb-3">
                                 <label>Nama</label>
-                                <input type="text" name="name" class="form-control">
+                                <input type="text" name="visitor_name" class="form-control">
                             </div>
                             
                             <div class="mb-3">
