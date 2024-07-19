@@ -20,7 +20,7 @@ include 'message.php';
 
     <div class="container mt-5">
 
-        <?php include('category-message.php'); ?>
+        <?php include('message.php'); ?>
 
         <div class="row">
             <div class="col-md-12">

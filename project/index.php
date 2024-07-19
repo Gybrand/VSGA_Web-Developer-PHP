@@ -76,7 +76,7 @@ require 'dbcon.php';
                                     $query = "SELECT * FROM visitors";
                                     if (isset($_GET['search'])) {
                                         $filtervalues = $_GET['search'];
-                                        $query .= " WHERE name LIKE '%$filtervalues%'";
+                                        $query .= " WHERE visitor_name LIKE '%$filtervalues%'";
                                     }
                                     $query_run = mysqli_query($con, $query);
 

@@ -36,7 +36,7 @@ if(isset($_POST['update_visitor']))
     $phone= mysqli_real_escape_string($con, $_POST['phone']);
 
 
-    $query = "UPDATE visitors SET name='$name', age='$age', gender='$gender', phone='$phone' WHERE id='$visitor_id' ";
+    $query = "UPDATE visitors SET visitor_name='$name', age='$age', gender='$gender', phone='$phone' WHERE id='$visitor_id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
@@ -107,7 +107,7 @@ if(isset($_POST['update_category']))
 
 
 
-    $query = "UPDATE category SET name='$category_name' WHERE id='$category_id' ";
+    $query = "UPDATE category SET category_name='$category_name' WHERE id='$category_id' ";
     $query_run = mysqli_query($con, $query);
 
     if($query_run)
